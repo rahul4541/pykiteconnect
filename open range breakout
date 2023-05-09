@@ -1,0 +1,9 @@
+# Fetch 15 minute Data of the day
+df15min = data # assuming its the same data
+high = df15min.high.iloc[0]
+close = data.iloc[-1]["close"]
+
+if  high < close:
+    PlaceBuyOrderMarketNSE('TATAMOTORS',1)
+# Delay for 5 seconds before checking again
+    time.sleep(5)
